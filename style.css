@@ -1,0 +1,67 @@
+:root {
+    /* Palette */
+    --bg:      #F9F7F2;
+    --font:    #44000A;
+    --a:       #009177;
+    --a_hover: #DD2255;
+    --cta:     #ECE9D2;
+    --cta_bg:  #E99FF4;
+    --pink:    pink;
+    
+    /* Fonts and Dimensions */
+    --cell: 32px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: var(--bg);
+    color: var(--font);
+    display: grid;
+    grid-template: 
+        "logo  nav   nav         nav     tools "     var(--cell)
+        "main  main  main        main    main  "     auto
+        "legal legal footer      contact contact"    var(--cell) /
+         var(--cell) var(--cell) auto    var(--cell) var(--cell);
+}
+
+#footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    background-color: var(--pink);
+}
+
+#legal {
+    grid-area: legal;
+    display: none;
+}
+
+#contact {
+    grid-area: contact;
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--a);
+}
+
+a:hover {
+    color: var(--a_hover);
+}
+
+.hi {
+    background-color: var(--pink);
+    padding: 5px;
+    border-radius: 50px;
+}
