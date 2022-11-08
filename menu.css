@@ -1,0 +1,25 @@
+.button img {
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+}
+
+#top_header {
+    grid-area: nav;
+    width: 100%;
+    background-color: var(--pink);
+    display: flex;
+    align-items: center;
+}
+
+#top_nav {
+    margin: 0 auto;
+}
+
+#logo {
+    grid-area: logo;
+}
+
+#tools {
+    grid-area: tools;
+}
