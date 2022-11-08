@@ -1,0 +1,23 @@
+#main {
+    grid-area: main;
+    background-color: var(--cta);
+    text-align: center;
+    display: grid;
+    grid-template:
+        "." auto
+        "jeff"  32px
+        "wendy" 32px
+        "." auto /
+        150px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#jeff {
+    grid-area: jeff;
+}
+
+#wendy {
+    grid-area: wendy;
+}
