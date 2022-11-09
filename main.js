@@ -1,26 +1,35 @@
-const jeff = document.getElementById("jeff")
-const wendy = document.getElementById("wendy")
+// ISSUE 1: The "person.getAttribute('id')" function
+//          call in sayHi() is not needed.
+// ================================================
+// The source element's id is _already_ available in
+// our onclick() functions. So, instead of using
+// sayHi(this) in our function call, we can use
+// sayHi(this.id). This means we can clean up the code
+// by eliminating the extra getAttribute() call.
+
+// We can then make it even easier to see what
+// the code's doing by renaming the sayHi() argument
+// from sayHi(person) to sayHi(personId)
+
+// ISSUE 2: The "return" statements in the onclick()
+//          functions are not needed, because these
+//          functions never get called.
 
 function capitalize(string) {
-    const firstLetter   = string.charAt(0).toUpperCase();
-    const restOfLetters = string.slice(1);
-
-    return firstLetter + restOfLetters;
+  return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-function sayHi(person){
-    var whois = person.getAttribute("id");
-
-    name = capitalize(whois);
-    alert(`Hi ${name}!`);
+function sayHi(personId) {
+  // alert(`Hi ${capitalize(person.getAttribute('id'))}!`)
+  alert(`Hi ${capitalize(personId)}!`)
 }
 
-jeff.onclick = function() {
-    sayHi(this);
-    return false;
-};
+document.getElementById('jeff').onclick = function () {
+  sayHi(this.id)
+  // return false
+}
 
-wendy.onclick = function() {
-    sayHi(this);
-    return false;
-};
+document.getElementById('wendy').onclick = function () {
+  sayHi(this.id)
+  // return false
+}
