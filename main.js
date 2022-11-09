@@ -1,26 +1,7 @@
-const jeff = document.getElementById("jeff")
-const wendy = document.getElementById("wendy")
+const jeff = document.getElementById('Jeff')
+const wendy = document.getElementById('Wendy')
 
-function capitalize(string) {
-    const firstLetter   = string.charAt(0).toUpperCase();
-    const restOfLetters = string.slice(1);
+const sayHi = (personId) => alert(`Hi ${personId}!`)
 
-    return firstLetter + restOfLetters;
-}
-
-function sayHi(person){
-    var whois = person.getAttribute("id");
-
-    name = capitalize(whois);
-    alert(`Hi ${name}!`);
-}
-
-jeff.onclick = function() {
-    sayHi(this);
-    return false;
-};
-
-wendy.onclick = function() {
-    sayHi(this);
-    return false;
-};
+jeff.onclick = () => sayHi(jeff.id)
+wendy.onclick = () => sayHi(wendy.id)
