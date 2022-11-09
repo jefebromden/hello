@@ -1,26 +1,12 @@
-const jeff = document.getElementById("jeff")
-const wendy = document.getElementById("wendy")
+// The onclick() functions can also be updated to ES6.
+// The easiset way to do this is by restoring your jeff & wendy constants
 
-function capitalize(string) {
-    const firstLetter   = string.charAt(0).toUpperCase();
-    const restOfLetters = string.slice(1);
+const jeff = document.getElementById('jeff')
+const wendy = document.getElementById('wendy')
 
-    return firstLetter + restOfLetters;
-}
+const capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1)
 
-function sayHi(person){
-    var whois = person.getAttribute("id");
+const sayHi = (personId) => alert(`Hi ${capitalize(personId)}!`)
 
-    name = capitalize(whois);
-    alert(`Hi ${name}!`);
-}
-
-jeff.onclick = function() {
-    sayHi(this);
-    return false;
-};
-
-wendy.onclick = function() {
-    sayHi(this);
-    return false;
-};
+jeff.onclick = () => sayHi(jeff.id)
+wendy.onclick = () => sayHi(wendy.id)
