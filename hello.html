@@ -5,29 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width,init-scale=1.0"/>
 
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="menu.css"/>
-    <link rel="stylesheet" href="custom.css"/>
-      <script type="text/javascript" src="main.js" defer></script>
+    {%- set styles = static['styles'] -%}
+    {% for style in styles -%}
+    <link rel="stylesheet" href="{{ style }}"/>
+    {%- endfor -%}
+
+    {%- set scripts = static['scripts'] -%}
+    {% for script in scripts -%}
+    <script type="text/javascript" src="{{ script }}" defer></script>
+    {%- endfor -%}
     <title></title>
   </head>
   <body>
-    <a id="logo" class="button" href="#>"><img src="icons/forrest-brand.svg" alt="Home"/></a>
+    {%- set icons = static['icons'] -%}
+    {%- set logo = icons['logo'] -%}
+    {%- set nav = icons['nav'] -%}
+    {%- set tools = icons['tools'] -%}
+    <a id="logo" class="button" href="#>"><img src="{{ logo }}" alt="Home"/></a>
     <header id="top_header">
       <nav id="top_nav">
-        <a class="button search" href="#>"><img src="icons/search.svg" alt="Schedule"/></a>
-        <a class="button filters" href="#>"><img src="icons/filters.svg" alt="Documents"/></a>
-        <a class="button alerts" href="#>"><img src="icons/alerts.svg" alt="Drawing Board"/></a>
+        {% for icon in nav -%}
+        <a class="button search" href="#>"><img src="{{ icon }}" alt="Schedule"/></a>
+        {% endfor -%}
       </nav>
     </header>
-    <a id="tools" class="button" href="#>"><img src="icons/tools.svg" alt="Login"/></a>
+    <a id="tools" class="button" href="#>"><img src="{{ tools }}" alt="Login"/></a>
     <main id="main">
       <a id="jeff" class="button hi" href="#>">Say Hi to Jeff</a>
       <a id="wendy" class="button hi" href="#>">Say Hi to Wendy</a>
     </main>
     <a id="legal" href="#">Legal</a>
     <footer id="footer">
-      <a id="dots" class="button" href="#>"><img src="icons/dots.svg" alt="Language"/></a>
+      {%- set dots = icons['dots'] -%}
+      <a id="dots" class="button" href="#>"><img src="{{ dots }}" alt="Language"/></a>
     </footer>
     <a id="contact" href="#">Contact</a>
   </body>
