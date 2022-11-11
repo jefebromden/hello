@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    homepage_src = open('hello.html').read()
+    homepage_src = open('index.html').read()
     homepage_tm  = Template(homepage_src)
 
     styles = []
