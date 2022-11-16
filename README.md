@@ -1,5 +1,21 @@
 # Webapp version of "Hello World"
 
+## Requirements
+
+You will need `Python 3` and `Pip` for installing the dependencies
+
+```
+pkcon python3 python3-pip
+```
+
+To install the dependencies, just run
+
+```
+pip install -r requirements
+```
+
+## Usage
+
 To test it run on the terminal
 
 ```
